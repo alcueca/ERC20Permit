@@ -1,11 +1,23 @@
 {
     "name": "erc20permit",
     "version": "0.0.1",
+    "description": "Solidity contracts implementing ERC2612",
     "author": {
         "name": "Alberto Cuesta Cañada",
         "github": "albertocuestacanada",
         "license": "GPL-3.0-or-later"
     },
+    "engines": {
+        "node": ">= 10.12.0",
+        "npm": ">= 6.4.0",
+        "yarn": ">= 1.10.0"
+    },
+    "files": [
+        "/contracts",
+        "!contracts/drafts/",
+        "!contracts/TestERC20.sol",
+        "!contracts/Migrations.sol"
+    ],
     "scripts": {
         "build": "buidler compile",
         "test": "buidler test test/*.ts",
@@ -14,6 +26,9 @@
         "coverage": "buidler coverage --network coverage --temp build --testfiles 'test/*.ts'",
         "lint:js": "prettier ./test/**/*.js --write",
         "lint:sol": "solhint -f table contracts/**/*.sol"
+    },
+    "peerDependencies": {
+        "@openzeppelin/contracts": "3.1.0"
     },
     "devDependencies": {
         "@nomiclabs/buidler": "^1.3.8",
