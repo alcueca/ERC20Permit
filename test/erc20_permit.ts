@@ -2,8 +2,7 @@ const ERC20 = artifacts.require('TestERC20')
 
 // @ts-ignore
 import { expectRevert } from '@openzeppelin/test-helpers'
-import { PERMIT_TYPEHASH, getPermitDigest, getDomainSeparator } from '../utils/signatures'
-import { ecsign } from 'ethereumjs-util'
+import { PERMIT_TYPEHASH, getPermitDigest, getDomainSeparator, sign } from '../utils/signatures'
 
 type Contract = any
 
@@ -49,7 +48,7 @@ contract('ERC20Permit', async (accounts: string[]) => {
     // Sign it
     // NOTE: Using web3.eth.sign will hash the message internally again which
     // we do not want, so we're manually signing here
-    const { v, r, s } = ecsign(Buffer.from(digest.slice(2), 'hex'), ownerPrivateKey)
+    const { v, r, s } = sign(digest, ownerPrivateKey)
 
     // Approve it
     const receipt = await token.permit(approve.owner, approve.spender, approve.value, deadline, v, r, s)

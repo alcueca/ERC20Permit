@@ -1,6 +1,6 @@
 {
   "name": "erc20permit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Solidity contracts implementing ERC2612",
   "author": "Alberto Cuesta Cañada",
   "engines": {

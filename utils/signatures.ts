@@ -2,11 +2,8 @@ import { keccak256, defaultAbiCoder, toUtf8Bytes, solidityPack } from 'ethers/li
 import { BigNumberish } from 'ethers'
 import { ecsign } from 'ethereumjs-util'
 
-export const userPrivateKey = Buffer.from('d49743deccbccc5dc7baa8e69e5be03298da8688a15dd202e20f15d5e0e9a9fb', 'hex')
-
 export const sign = (digest: any, privateKey: any) => {
-  const { v, r, s } = ecsign(Buffer.from(digest.slice(2), 'hex'), privateKey)
-  return '0x' + r.toString('hex') + s.toString('hex') + v.toString(16)
+  return ecsign(Buffer.from(digest.slice(2), 'hex'), privateKey)
 }
 
 export const PERMIT_TYPEHASH = keccak256(
