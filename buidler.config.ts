@@ -7,7 +7,7 @@ usePlugin("buidler-gas-reporter");
 export default {
     defaultNetwork: "buidlerevm",
     solc: {
-        version: "0.6.10",
+        version: "0.8.0",
         optimizer: {
             enabled: true,
             runs: 200
