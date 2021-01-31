@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "./ERC20Permit.sol";
 
 contract TestERC20 is ERC20Permit {
-    constructor (uint256 supply) public ERC20Permit("Test", "TST") {
+    constructor (uint256 supply) ERC20Permit("Test", "TST") {
         _mint(msg.sender, supply);
     }
 

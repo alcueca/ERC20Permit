@@ -20,7 +20,7 @@ abstract contract ERC20Permit is ERC20, IERC2612 {
     bytes32 public immutable PERMIT_TYPEHASH = keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
     bytes32 public immutable DOMAIN_SEPARATOR;
 
-    constructor(string memory name_, string memory symbol_) internal ERC20(name_, symbol_) {
+    constructor(string memory name_, string memory symbol_) ERC20(name_, symbol_) {
         uint256 chainId;
         assembly {
             chainId := chainid()
