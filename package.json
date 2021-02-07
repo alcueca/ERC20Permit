@@ -1,6 +1,6 @@
 {
   "name": "erc20permit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Solidity contracts implementing ERC2612",
   "author": "Alberto Cuesta Cañada",
   "engines": {
@@ -30,7 +30,7 @@
     "lint:sol": "solhint -f table contracts/**/*.sol"
   },
   "dependencies": {
-    "acc-erc20": "0.5.6"
+    "acc-erc20": "0.5.7"
   },
   "devDependencies": {
     "@nomiclabs/buidler": "^1.3.8",
@@ -39,7 +39,7 @@
     "@openzeppelin/test-helpers": "^0.5.6",
     "@truffle/hdwallet-provider": "^1.0.40",
     "@types/mocha": "^8.0.0",
-    "acc-erc20": "0.5.6",
+    "acc-erc20": "0.5.7",
     "buidler-gas-reporter": "0.1.4-beta.4",
     "chai": "4.2.0",
     "ethereumjs-util": "^7.0.3",
