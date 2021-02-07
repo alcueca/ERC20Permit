@@ -30,12 +30,15 @@ abstract contract ERC20Permit is ERC20, IERC2612 {
             abi.encode(
                 keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
                 keccak256(bytes(name_)),
-                keccak256(bytes("1")),
+                keccak256(bytes(version())),
                 chainId,
                 address(this)
             )
         );
     }
+
+    /// @dev Setting the version as a function so that it can be overriden
+    function version() public pure virtual returns(string memory) { return "1"; }
 
     /**
      * @dev See {IERC2612-permit}.
